@@ -1,0 +1,190 @@
+/* Variables de Marca */
+:root {
+    --azul-kinal: #003366;
+    --naranja-kinal: #f37021;
+    --blanco: #ffffff;
+    --gris-claro: #f4f4f9;
+    --texto: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texto);
+    line-height: 1.6;
+    background-color: var(--blanco);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--azul-kinal);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--naranja-kinal);
+}
+
+.btn-cta {
+    background: var(--naranja-kinal);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), 
+                url('https://via.placeholder.com/1920x1080') center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--naranja-kinal);
+}
+
+.hero-btns {
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--naranja-kinal);
+    color: white;
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+}
+
+/* Grid Layout */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Features */
+.features {
+    padding: 4rem 0;
+    background: var(--gris-claro);
+    text-align: center;
+}
+
+.feature-card {
+    padding: 2rem;
+    background: white;
+    border-bottom: 4px solid var(--naranja-kinal);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Oferta / Cards */
+.oferta {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: var(--azul-kinal);
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h4 {
+    margin-bottom: 10px;
+    color: var(--azul-kinal);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
