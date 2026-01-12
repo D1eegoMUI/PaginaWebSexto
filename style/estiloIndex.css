@@ -1,0 +1,76 @@
+/* --- ESTILOS BASE (Para Celulares) --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+}
+
+.contenedor-centrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Ajustado para móvil */
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* --- NUEVO: Contenedor de botones --- */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column; /* En móvil, uno arriba del otro */
+    gap: 15px;              /* Espacio entre botones */
+    width: 100%;
+    align-items: center;    /* Centra los botones */
+    margin-bottom: 30px;
+}
+
+.boton {
+    text-decoration: none;
+    background-color: #e62727;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 80%;             /* Botones anchos en móvil */
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+p {
+    max-width: 500px;       /* Para que el texto no se estire demasiado */
+    line-height: 1.5;
+    color: #666;
+}
+
+/* --- MEDIA QUERY (Para Tablets y Laptops) --- */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    .contenedor-botones {
+        flex-direction: row; /* AQUÍ ocurre la magia: se ponen de lado */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .boton {
+        width: auto;         /* El botón solo ocupa su contenido */
+        padding: 12px 40px;
+    }
+}
+
+/* Efecto hover */
+.boton:hover {
+    background-color: #c41f1f;
+    transform: scale(1.05);
+}
