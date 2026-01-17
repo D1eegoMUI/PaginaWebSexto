@@ -2,101 +2,92 @@
 body, html {
     margin: 0;
     padding: 0;
-    min-height: 100%;
-    font-family: sans-serif;
-    background-color: #f0f2f5; /* Fondo gris claro */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa; /* Fondo gris muy suave */
+    color: #333;
 }
 
-/* El padre que centra el cuadro */
 .fondo-pagina {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px; /* Margen de seguridad para que no toque bordes */
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* El cuadro blanco principal */
+/* El cuadro principal con efecto de tarjeta moderna */
 .contenedor-principal {
     background-color: white;
-    width: 100%;             /* En móvil usa todo el ancho disponible */
-    padding: 30px;           /* Espacio interno */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 100%; 
+    padding: 30px;
+    border-radius: 20px;
+    /* Sombra elegante y suave */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-top: 6px solid #e62727; /* Detalle superior en rojo */
     box-sizing: border-box;
+    overflow: hidden; /* Para que la foto flotante no se salga */
+}
+
+/* Logo de Kinal pequeño arriba */
+.logo-kinal {
+    width: 60px;
+    display: block;
+    margin: 0 auto 10px;
 }
 
 h1 {
-    text-align: center;      /* Título centrado arriba */
-    font-size: 1.8rem;       /* Tamaño cómodo para móvil */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #e62727; /* Título en rojo */
+    font-weight: 800;
+}
+
+/* Estilos de la foto personal */
+.contenedor-foto-personal {
+    text-align: center; /* En móvil la foto se ve mejor centrada */
     margin-bottom: 20px;
-    color: #333;
+}
+
+.foto-personal {
+    width: 200px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 20px; /* Bordes redondeados modernos */
+    border: 3px solid #e62727;
+    padding: 4px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(230, 39, 39, 0.2);
 }
 
 p {
-    text-align: justify;     /* Texto justificado */
-    line-height: 1.6;
+    text-align: justify;
+    line-height: 1.8;
     color: #555;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1rem;
 }
 
-/* Botón adaptado a móvil */
-.boton {
+/* Contenedor para los 2 botones */
+.contenedor-botones-bio {
+    display: flex;
+    flex-direction: column; /* Botones uno arriba de otro en móvil */
+    gap: 12px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.boton-bio {
     text-decoration: none;
     background-color: #e62727;
     color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
-    display: block;          /* Ocupa su propia línea */
-    width: 80%;              /* Casi todo el ancho en móvil */
-    margin: 30px auto 0;     /* Centra el botón horizontalmente */
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 100%; /* Botones anchos en móvil */
+    max-width: 250px;
     text-align: center;
-    transition: all 0.3s;
-}
-
-.foto-biografia {
-    width: 100px;           /* Ancho de la imagen */
-    height: 100px;          /* Alto de la imagen */
-    object-fit: cover;      /* Evita que la foto se estire feo si no es cuadrada */
-    border-radius: 50%;     /* Esto la hace circular (opcional) */
-    float: left;            /* La "empuja" a la izquierda */
-    margin-right: 20px;     /* Espacio entre la foto y el texto/título */
-    margin-bottom: 10px;    /* Espacio por abajo */
-}
-
-/* Truco para que el cuadro blanco no se "rompa" por la imagen flotante */
-.contenedor-principal::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* --- MEDIA QUERY (Tablets y Laptops - 768px o más) --- */
-@media (min-width: 768px) {
-    .contenedor-principal {
-        max-width: 800px;    /* En PC el cuadro no se estira infinitamente */
-        padding: 50px;       /* Más aire interno en pantallas grandes */
-    }
-
-    h1 {
-        font-size: 3.5rem;   /* Título mucho más grande en PC */
-    }
-
-    .boton {
-        width: auto;         /* El botón recupera su tamaño natural */
-        display: inline-block; /* Permite que se comporte como botón normal */
-        padding: 12px 40px;
-    }
-
-    .foto-biografia {
-        width: 150px; /* En PC la foto se hace un poco más grande */
-        height: 150px;
-    }
-}
-
-/* Efectos visuales */
-.boton:hover {
-    background-color: #e93a3a;
-    transform: scale(1.05);
-}
+    transition: all 0.3s ease

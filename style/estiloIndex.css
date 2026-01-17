@@ -1,10 +1,19 @@
-/* --- ESTILOS BASE (Para Celulares) --- */
+/* --- ESTILOS BASE (Móvil Primero) --- */
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: sans-serif;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    
+    /* CONFIGURACIÓN DE IMAGEN DE FONDO */
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;       /* Cubre toda la pantalla */
+    background-position: center;  /* Centra la imagen */
+    background-attachment: fixed; /* La imagen no se mueve al hacer scroll */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedor-centrado {
@@ -12,65 +21,80 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 85%;
+    max-width: 550px;
+    padding: 40px 20px;
+    
+    /* EFECTO DE TRANSPARENCIA (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.85); /* Blanco con 85% de opacidad */
+    backdrop-filter: blur(10px);          /* Desenfoca lo que está detrás */
+    -webkit-backdrop-filter: blur(10px);  /* Soporte para Safari */
+    
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil brillante */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     text-align: center;
-    padding: 0 20px;
 }
 
 h1 {
-    font-size: 2.5rem; /* Ajustado para móvil */
-    margin-bottom: 30px;
-    color: #333;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #222;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra ligera al texto */
 }
 
-/* --- NUEVO: Contenedor de botones --- */
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 40px;
+    /* Fondo del párrafo más transparente para que combine */
+    background: rgba(230, 39, 39, 0.1); 
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #e62727;
+}
+
+/* --- Contenedor de botones --- */
 .contenedor-botones {
     display: flex;
-    flex-direction: column; /* En móvil, uno arriba del otro */
-    gap: 15px;              /* Espacio entre botones */
+    flex-direction: column;
+    gap: 15px;
     width: 100%;
-    align-items: center;    /* Centra los botones */
-    margin-bottom: 30px;
 }
 
 .boton {
     text-decoration: none;
     background-color: #e62727;
     color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
+    padding: 16px;
+    border-radius: 12px;
     font-weight: bold;
-    width: 80%;             /* Botones anchos en móvil */
-    transition: all 0.3s ease;
-    text-align: center;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(230, 39, 39, 0.4);
 }
 
-p {
-    max-width: 500px;       /* Para que el texto no se estire demasiado */
-    line-height: 1.5;
-    color: #666;
-}
-
-/* --- MEDIA QUERY (Para Tablets y Laptops) --- */
+/* --- MEDIA QUERY (Tablets y Laptops) --- */
 @media (min-width: 768px) {
     h1 {
         font-size: 4rem;
     }
 
     .contenedor-botones {
-        flex-direction: row; /* AQUÍ ocurre la magia: se ponen de lado */
+        flex-direction: row;
         justify-content: center;
         gap: 20px;
     }
 
     .boton {
-        width: auto;         /* El botón solo ocupa su contenido */
-        padding: 12px 40px;
+        padding: 15px 35px;
+        width: auto;
     }
 }
 
-/* Efecto hover */
 .boton:hover {
     background-color: #c41f1f;
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(230, 39, 39, 0.5);
 }
