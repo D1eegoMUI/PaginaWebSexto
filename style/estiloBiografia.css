@@ -31,6 +31,20 @@ body, html {
     overflow: hidden; /* Para que la foto flotante no se salga */
 }
 
+.contenedor-expectativas, .contenedor-tiempo {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid #740316; /* Un borde lateral para resaltar */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo ligero */
+    border-radius: 5px;
+}
+
+.contenedor-expectativas h2, .contenedor-tiempo h2 {
+    color: #740316;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
 /* Logo de Kinal pequeño arriba */
 .logo-kinal {
     width: 60px;
